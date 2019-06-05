@@ -1,0 +1,43 @@
+<html><head>
+<style>
+H1{text-align:center;    color:#2F4F4F; font-style:italic; font-size:30 pt }
+p{text-align:justify;    color:#2F4F4F; font-style:italic; font-size:18 pt }
+li{text-align:justify;    color:#2F4F4F; font-style:italic; font-size:18 pt }
+</style>
+<script>
+var a=new Array();
+for (i=0; i<3; i++)
+{
+ a[i]=new Image();
+ a[i].src="img0"+(i+1)+".gif";
+}
+var i=0; 
+function Z1()
+{
+    i++;
+    if (i==3)i=0;
+
+document.images[0].src=a[i].src;
+t=setTimeout("Z1()",2500); 
+}
+
+function start() {
+t=setTimeout("Z1()",2500); 
+}
+</script></head>
+
+<body bgcolor="white" onLoad="start()">
+<img src="img01.gif" height=80 width=80>
+<h1>Простейшая мультипликация</h1>
+
+<p>
+  Объект <b><i>images</i> </b>позволяет создавать простейшую мультипликацию.
+  Сначала создаём массив этих объектов в переменной <b><i>a[i]</i></b>,
+затем в них загружаются изображения и последовательно отображаются. 
+  В элементе <b><i>&ltimg></i> </b>сменяются три картинки из файлов <b><i>img01.gif, img02.gif, img03.gif</i> </b>
+
+ </p>
+</body></html>
+
+
+
