@@ -1,0 +1,48 @@
+<HTML>
+<HEAD><STYLE type="text/css">
+H1{text-align:center;    color:#0000CD; font-style:italic; font-size:30 pt }
+P{text-align:center;  background-color:#B0C4DE;  color:#0000CD; font-size:24 pt }
+
+</STYLE>
+<SCRIPT>
+
+function Timer() {
+
+  var z = new Date();
+  
+  document.F.data.value=z.toLocaleString();
+
+  v1 = z.getFullYear();
+  v2 = z.getUTCMonth();
+  v3 = z.getDate();
+  v4 = z.getHours();
+  v5 = z.getMinutes();
+  v6 = z.getSeconds();
+  v = v1 + ":"+ v2 + ":"+ v3 + ":"+ v4 + ":"+ v5 + ":"+ v6;
+  document.F.vremja1.value=v;
+
+  document.F.vremja2.value=z.getHours()+":"+z.getMinutes()+":"+z.getSeconds();
+  
+  setTimeout('Timer()',1000)
+  }
+
+</script></head>
+
+<BODY onload=Timer() bgcolor="#B0C4DE" text="#0000CD">
+<H1>Объект DATE</h1><BR><BR><BR>
+  <FORM name="F">
+
+
+    <p> Полный формат даты с помощью метода объекта String [<i>toLocaleString( )</i>]:
+    <center><INPUT type="text" name="data" size=30%  style="text-align:center; font-family:Arial;  font-size:48pt"><BR><BR></center></p>
+    
+    <p> Полный формат даты (методом "в лоб"):
+    <center><INPUT type="text" name="vremja1" size=30%  style="text-align:center; font-family:Arial;  font-size:48pt"><BR><BR></center></p>
+
+    <p> Текущее время (методом "почти в лоб"):
+    <center><INPUT type="text" size=8 name="vremja2" size=30%  style="text-align:center; font-family:Arial;  font-size:48pt"><BR><BR></center></p>
+
+  </form>
+</body>
+</html>
+
