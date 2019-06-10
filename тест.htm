@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>
+ТЕСТ по теме JavaScript
+</title>
+<style type="text/css">
+p  {font:bold 10pt Verdana; color:#0000ff}
+h3 {text-align:center; font-family:Verdana; color=#0000ff}
+</style>
+<script>
+var r=new Array(1,1,0,3,2,1,1,0,2,3,1,1,0,3,0,0,1,2,3,2);
+var b=0;
+function test(){
+b=0;
+for (i=1; i<=20; i++)
+ if(document.fm.elements["d"+i][r[i-1]].checked) {b++;};
+if (b<=8)
+    alert ("Ваша оценка 2.\n Вы набрали "+b+" очков (очка).\n Запустите тест ещё раз. Будьте внимательны...");
+if (b>=9 && b<=14)  
+    alert ("Ваша оценка 3. Покажите учителю.\n Вы набрали "+b+" очков (очка).");
+if (b>14 && b<19)  
+    alert ("Ваша оценка 4. Покажите учителю.\n Вы набрали "+b+" очков (очка).");
+if (b>=19)  
+    alert ("Ваша оценка 5. Покажите учителю.\n Вы набрали "+b+" очков (очка).");
+}
+</script>
+</head>
+<body bgcolor="#f0f0fa">
+<h3>JavaScript</h3>
+
+<form name="fm">
+<p>1. Обращение к памяти компьютера осуществляется с помощью:</p>
+  <input type=radio name=d1> - Оператора.<br>
+  <input type=radio name=d1> - Имени переменной.<br>
+  <input type=radio name=d1> - Трехчлена.<br>
+  <input type=radio name=d1> - Типа переменной.<br>
+<p>2. Что происходит в выражении a++</p>
+  <input type=radio name=d2> - Увеличение значения a на 2.<br>
+  <input type=radio name=d2> -  Увеличение значения a на 1. <br>
+  <input type=radio name=d2> -  Значение a увеличивается многократно.<br>
+  <input type=radio name=d2> - Ничего. Это неправильное выражение.<br>
+<p>3. Для чего нужен оператор &&?</p>
+  <input type=radio name=d3> - Выражение истинно, если обе его части  справа и слева истинны.<br>
+  <input type=radio name=d3> - Выражение истинно, если одна из его частей  справа и слева истинна.<br>
+  <input type=radio name=d3> - Выражение истинно, если ни одна из его частей  справа и слева не истинна.<br>
+  <input type=radio name=d3> -  Прибавляет правую часть к левой.<br>
+<p>4. Обе части оператора if...else содержат блоки:</p>
+  <input type=radio name=d4> - Которые не нужно заключать в  фигурные скобки.<br>
+  <input type=radio name=d4> - Один из которых начинается и заканчивается фигурными скобками, а другой клуглыми.<br>
+  <input type=radio name=d4> - Один из которых начинается и заканчивается фигурными скобками.<br>
+  <input type=radio name=d4> - Которые начинаются и заканчиваются фигурными скобками.<br>
+<p>5. Каково  назначение else в операторе if...else?</p>
+  <input type=radio name=d5> - Содержит операторы, которые выполняются в случае, если условие истинно.<br>
+  <input type=radio name=d5> - Указывает на другое условие, проверяемое браузером, если первое условие ложно.<br>
+  <input type=radio name=d5> - Содержит операторы, которые выполняются в случае, если условие ложно.<br>
+  <input type=radio name=d5> - Используется для расположения вложенного оператора if.<br>
+<p>6. Счетчик в цикле for используется для:</p>
+  <input type=radio name=d6> - Увеличения выражения на 1.<br>
+  <input type=radio name=d6> - Увеличения или уменьшения значения счетчика на величину шага.<br>
+  <input type=radio name=d6> - Ограничения числа операторов в кодовом блоке.<br>
+  <input type=radio name=d6> - Ограничения результатов выполнения операторов в кодовом блоке.<br>
+<p>7. Истинно или ложно утверждение:"Цикл for может быть бескончным"?</p>
+  <input type=radio name=d7> - Истинно.<br>
+  <input type=radio name=d7> - Ложно.<br>
+  <input type=radio name=d7> - <br>
+  <input type=radio name=d7> - <br>
+<p>8. Оператор continue сообщает браузеру: </p>
+  <input type=radio name=d8> - О необходимости прекратить выполнение операторов в блоке цикла и перейти к оператору цикла.<br>
+  <input type=radio name=d8> - О необходимости прекратить выполнение операторов в блоке цикла.<br>
+  <input type=radio name=d8> - О необходимости продолжить выполнение операторов в блоке цикла.<br>
+  <input type=radio name=d8> - О необходимости пропустить выполнение операторов в блоке цикла.<br>
+<p>9. Цикл while сообщает браузеру: </p>
+  <input type=radio name=d9> - Сколько раз должны выполниться операторы тела цикла.<br>
+  <input type=radio name=d9> - О необходимости выполннять операторы в блоке цикла, пока условие, указанное в этом цикле, ложно. <br>
+  <input type=radio name=d9> - О необходимости выполннять операторы в блоке цикла, пока условие, указанное в этом цикле, истинно.<br>
+  <input type=radio name=d9> - О невозможности выполнить операторы в блоке цикла, пока условие, указанное в этом цикле, истинно.<br>
+
+<p>10. Первый элемент в массиве D - это:</p>
+  <input type=radio name=d10> - D[1].<br>
+  <input type=radio name=d10> - D[2].<br>
+  <input type=radio name=d10> - D.<br>
+  <input type=radio name=d10> - D[0].<br>
+<p>11. Сколько элементов в данном массиве: D=new Array('Soda','Beer','Pizza')  </p>
+  <input type=radio name=d11> - 2.<br>
+  <input type=radio name=d11> - 3.<br>
+  <input type=radio name=d11> - 4.<br>
+  <input type=radio name=d11> - Ни одного. <br>
+<p>12. Истинно или ложно следующее высказывание:"Длина массива равна индексу последнего элемента в нем"?</p>
+  <input type=radio name=d12> - Истинно.<br>
+  <input type=radio name=d12> - Ложно.<br>
+  <input type=radio name=d12> - <br>
+  <input type=radio name=d12> - <br>
+<p>13. Истинно или ложно следующее высказывание:"Элемент массива можно использовать таким же образом, как и переменную в JavaScript"?</p>
+  <input type=radio name=d13> - Истинно.<br>
+  <input type=radio name=d13> - Ложно.<br>
+  <input type=radio name=d13> - <br>
+  <input type=radio name=d13> - <br>
+<p>14. Какой метод используется для получения нового массива из исходных массивов?</p>
+  <input type=radio name=d14> - slice(). <br>
+  <input type=radio name=d14> - div().<br>
+  <input type=radio name=d14> - splice().<br>
+  <input type=radio name=d14> - concat().<br>
+<p>15. Какой метод используется для получения части массива?</p>
+  <input type=radio name=d15> - slice().<br>
+  <input type=radio name=d15> - div().<br>
+  <input type=radio name=d15> - splice().<br>
+  <input type=radio name=d15> - concat().<br>
+<p>16. Что хранится в свойстве length объекта string?</p>
+  <input type=radio name=d16> - Полное число символов в строке. <br>
+  <input type=radio name=d16> - Индекс последнего символа в строке.<br>
+  <input type=radio name=d16> - Длина строки без пробелов.<br>
+  <input type=radio name=d16> - Длина строки без конечного пробела.<br>
+<p>17. document.write() - это пример:</p>
+  <input type=radio name=d17> - Объекта. <br>
+  <input type=radio name=d17> - Метода.<br>
+  <input type=radio name=d17> - Свойства.<br>
+  <input type=radio name=d17> - Переменной.<br>
+<p>18. Фоновый цвет документа является:</p>
+  <input type=radio name=d18> - Объектом.<br>
+  <input type=radio name=d18> - Методом.<br>
+  <input type=radio name=d18> - Свойством.<br>
+  <input type=radio name=d18> - Переменной.<br>
+<p>19. Функция должна быть определена в теге:</p>
+  <input type=radio name=d19> - &ltbody>.<br>
+  <input type=radio name=d19> - &lthead>.<br>
+  <input type=radio name=d19> - &lttitle>.<br>
+  <input type=radio name=d19> - &ltscript>.<br>
+<p>20. Доступ к локальной переменной можно получить:</p>
+  <input type=radio name=d20> - Только из функции, где она определена.<br>
+  <input type=radio name=d20> - Только снаружи функции. <br>
+  <input type=radio name=d20> - Только через определяющую функцию.<br>
+  <input type=radio name=d20> - Из любого места в сценарии JavaScript.<br>
+<input type=button value="Подведем итоги" onClick="test()">
+</form>
+<p>Критерии оценки: 2 балла (0-8); 3 балла (9-14); 4 балла (15-18); 5 баллов (19-20).</p>
+</body>
+</html>

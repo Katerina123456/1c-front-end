@@ -1,0 +1,732 @@
+<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html>
+<head>
+<title>Карта интересов </title>
+<style type='text/css'>
+ol {color: #000000; font-family: Verdana; font-size: 14; font-weight: }
+td {color: #191970; font-family: Arial; font-size: 12; width:135px; CELLSPACING:0px; padding: 0px; font-style: italic }
+p {color: #191970; font-family: Arial; font-size: 16; text-align:center;  font-style: italic }
+
+</style>
+
+<script>
+function BreakInDetected(){
+alert('Security Violation (нарушение безопасности)');
+return false;
+}
+
+function IEBr(){
+if (event.button==2)
+{
+BreakInDetected();
+return false;
+}
+}
+if (document.layers)
+{
+document.captureEvents(Event.MOUSDOWN);
+//document.onmousedown=NB ();
+}
+else if (document.all && !document.getElementById)
+{
+document.onmousedown=IEBr();
+}
+document.oncontextmenu = new Function('BreakInDetected();return false');
+
+
+function mass(){
+ var y=0;
+ var s=0;
+var prom = new Array ();
+var newWin = window.open('', 'example', 'width=500,height=450,status=no,toolbar=no,menubar=no,left=250,top=250');  
+part2 = ["Физика и математика","Химия","Радиотехника и электроника","Механика и конструирование","География","Биология","Филология","История и политика","Педагогика и воспитание","Медицина","Домоводство","Искусство","Спорт и военное дело"];
+part3 = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+  for (i=1; i<=78; i++){
+   prom[i-1]=0;
+   for (j=0; j<=4; j++){
+    if(document.F.elements["r"+i][j].checked) {
+prom[i-1]=parseInt(document.F.elements["r"+i][j].value)
+}
+   }
+  }
+for (j=0; j<=12; j++){s=0;
+for (i=j; i<=77; i=i+13){s=s+prom[i];
+}
+part3[j]=s;
+}
+var it=new Array(part2,part3)
+
+ for (i=1; i<=11; i++) {
+                   for (j=12; j>=i; j--) {
+                    if (it[1][j-1]>=it[1][j]) continue; 
+                    else {
+                     puz0 = it[1][j-1];
+                     it[1][j-1] = it[1][j];
+                     it[1][j] = puz0; 
+                     puz1 = it[0][j-1];
+                     it[0][j-1] = it[0][j];
+                     it[0][j] = puz1; 
+                     } 
+                  }
+               }
+display(it);
+function display(parametr_func){
+newWin.document.write('<table border=1 style="border-color:#191970" >');  
+    for(var i = 0; i < 13; i++){
+newWin.document.write('<tr>');        
+        for(var j = 0; j < 2; j++){
+       newWin. document.write('<td style="color: #191970;border-color:#191970; font-family: Arial; font-size: 14; width:235px;  font-style: italic;padding:5px; " >', parametr_func[j][i], '</td>');
+
+        }
+     newWin.document.write('</tr>');
+    }
+    newWin.document.write("</table>");
+} 
+}
+</script>
+</head>
+
+<body bgcolor="#ffffff" text="#000000">
+<p>Карта интересов</p>
+
+
+<form name='F'>
+<ol> 
+<p><li>Решать логические задачи по занимательной физике или математике?
+<table border=0 ><tr>
+<td><input type="radio" name="r1" value='2'>Очень нравится</td>
+<td><input type="radio" name="r1" value='1'>Нравится</td>
+<td><input type="radio" name="r1" value='0'>Не знаю</td>
+<td><input type="radio" name="r1" value='-1'>Не нравится</td>
+<td><input type="radio" name="r1" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+Узнавать об открытиях в химии?
+<table border=0><tr>
+<td><input type="radio" name="r2" value='2'>Очень нравится</td>
+<td><input type="radio" name="r2" value='1'>Нравится</td>
+<td><input type="radio" name="r2" value='0'>Не знаю</td>
+<td><input type="radio" name="r2" value='-1'>Не нравится</td>
+<td><input type="radio" name="r2" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+ Выяснять устройство электро-и радиоприборов?
+<table border=0><tr>
+<td><input type="radio" name="r3" value='2'>Очень нравится</td>
+<td><input type="radio" name="r3" value='1'>Нравится</td>
+<td><input type="radio" name="r3" value='0'>Не знаю</td>
+<td><input type="radio" name="r3" value='-1'>Не нравится</td>
+<td><input type="radio" name="r3" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Посещать в интернете сайты, посвящённые технике?<table border=0><tr>
+<td><input type="radio" name="r4" value='2'>Очень нравится</td>
+<td><input type="radio" name="r4" value='1'>Нравится</td>
+<td><input type="radio" name="r4" value='0'>Не знаю</td>
+<td><input type="radio" name="r4" value='-1'>Не нравится</td>
+<td><input type="radio" name="r4" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Интересоваться нравами и обычаями людей других стран?<table border=0><tr>
+<td><input type="radio" name="r5" value='2'>Очень нравится</td>
+<td><input type="radio" name="r5" value='1'>Нравится</td>
+<td><input type="radio" name="r5" value='0'>Не знаю</td>
+<td><input type="radio" name="r5" value='-1'>Не нравится</td>
+<td><input type="radio" name="r5" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Ухаживать за животными или растениями?<table border=0><tr>
+<td><input type="radio" name="r6" value='2'>Очень нравится</td>
+<td><input type="radio" name="r6" value='1'>Нравится</td>
+<td><input type="radio" name="r6" value='0'>Не знаю</td>
+<td><input type="radio" name="r6" value='-1'>Не нравится</td>
+<td><input type="radio" name="r6" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+Читать произведения классиков мировой литературы?<table border=0><tr>
+<td><input type="radio" name="r7" value='2'>Очень нравится</td>
+<td><input type="radio" name="r7" value='1'>Нравится</td>
+<td><input type="radio" name="r7" value='0'>Не знаю</td>
+<td><input type="radio" name="r7" value='-1'>Не нравится</td>
+<td><input type="radio" name="r7" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Знакомиться с историей культуры и архитектуры?<table border=0><tr>
+<td><input type="radio" name="r8" value='2'>Очень нравится</td>
+<td><input type="radio" name="r8" value='1'>Нравится</td>
+<td><input type="radio" name="r8" value='0'>Не знаю</td>
+<td><input type="radio" name="r8" value='-1'>Не нравится</td>
+<td><input type="radio" name="r8" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Разбирать споры между одноклассниками в школе?<table border=0><tr>
+<td><input type="radio" name="r9" value='2'>Очень нравится</td>
+<td><input type="radio" name="r9" value='1'>Нравится</td>
+<td><input type="radio" name="r9" value='0'>Не знаю</td>
+<td><input type="radio" name="r9" value='-1'>Не нравится</td>
+<td><input type="radio" name="r9" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Знакомиться с работой врачей?<table border=0><tr>
+<td><input type="radio" name="r10" value='2'>Очень нравится</td>
+<td><input type="radio" name="r10" value='1'>Нравится</td>
+<td><input type="radio" name="r10" value='0'>Не знаю</td>
+<td><input type="radio" name="r10" value='-1'>Не нравится</td>
+<td><input type="radio" name="r10" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+ Придумывать и проводить домашние развлекательные мероприятия для своих гостей?<table border=0><tr>
+<td><input type="radio" name="r11" value='2'>Очень нравится</td>
+<td><input type="radio" name="r11" value='1'>Нравится</td>
+<td><input type="radio" name="r11" value='0'>Не знаю</td>
+<td><input type="radio" name="r11" value='-1'>Не нравится</td>
+<td><input type="radio" name="r11" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Посещать выставки, театры, музеи?<table border=0><tr>
+<td><input type="radio" name="r12" value='2'>Очень нравится</td>
+<td><input type="radio" name="r12" value='1'>Нравится</td>
+<td><input type="radio" name="r12" value='0'>Не знаю</td>
+<td><input type="radio" name="r12" value='-1'>Не нравится</td>
+<td><input type="radio" name="r12" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Интересоваться войнами и сражениями прошлых лет?
+<table border=0><tr>
+<td><input type="radio" name="r13" value='2'>Очень нравится</td>
+<td><input type="radio" name="r13" value='1'>Нравится</td>
+<td><input type="radio" name="r13" value='0'>Не знаю</td>
+<td><input type="radio" name="r13" value='-1'>Не нравится</td>
+<td><input type="radio" name="r13" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+Интересоваться современным развитием робототехники?<table border=0><tr>
+<td><input type="radio" name="r14" value='2'>Очень нравится</td>
+<td><input type="radio" name="r14" value='1'>Нравится</td>
+<td><input type="radio" name="r14" value='0'>Не знаю</td>
+<td><input type="radio" name="r14" value='-1'>Не нравится</td>
+<td><input type="radio" name="r14" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Выполнять домашние задания по химии?<table border=0><tr>
+<td><input type="radio" name="r15" value='2'>Очень нравится</td>
+<td><input type="radio" name="r15" value='1'>Нравится</td>
+<td><input type="radio" name="r15" value='0'>Не знаю</td>
+<td><input type="radio" name="r15" value='-1'>Не нравится</td>
+<td><input type="radio" name="r15" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Самостоятельно исправлять бытовые электро-радиоприборы?<table border=0><tr>
+<td><input type="radio" name="r16" value='2'>Очень нравится</td>
+<td><input type="radio" name="r16" value='1'>Нравится</td>
+<td><input type="radio" name="r16" value='0'>Не знаю</td>
+<td><input type="radio" name="r16" value='-1'>Не нравится</td>
+<td><input type="radio" name="r16" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Посещать ярмарки учебных мест в области машиностроения?<table border=0><tr>
+<td><input type="radio" name="r17" value='2'>Очень нравится</td>
+<td><input type="radio" name="r17" value='1'>Нравится</td>
+<td><input type="radio" name="r17" value='0'>Не знаю</td>
+<td><input type="radio" name="r17" value='-1'>Не нравится</td>
+<td><input type="radio" name="r17" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Ходить в походы?<table border=0><tr>
+<td><input type="radio" name="r18" value='2'>Очень нравится</td>
+<td><input type="radio" name="r18" value='1'>Нравится</td>
+<td><input type="radio" name="r18" value='0'>Не знаю</td>
+<td><input type="radio" name="r18" value='-1'>Не нравится</td>
+<td><input type="radio" name="r18" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Посещать уроки биологии?<table border=0><tr>
+<td><input type="radio" name="r19" value='2'>Очень нравится</td>
+<td><input type="radio" name="r19" value='1'>Нравится</td>
+<td><input type="radio" name="r19" value='0'>Не знаю</td>
+<td><input type="radio" name="r19" value='-1'>Не нравится</td>
+<td><input type="radio" name="r19" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Читать критические статьи по литературе?<table border=0><tr>
+<td><input type="radio" name="r20" value='2'>Очень нравится</td>
+<td><input type="radio" name="r20" value='1'>Нравится</td>
+<td><input type="radio" name="r20" value='0'>Не знаю</td>
+<td><input type="radio" name="r20" value='-1'>Не нравится</td>
+<td><input type="radio" name="r20" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Изучать историю 20 века?<table border=0><tr>
+<td><input type="radio" name="r21" value='2'>Очень нравится</td>
+<td><input type="radio" name="r21" value='1'>Нравится</td>
+<td><input type="radio" name="r21" value='0'>Не знаю</td>
+<td><input type="radio" name="r21" value='-1'>Не нравится</td>
+<td><input type="radio" name="r21" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Объяснять друзьям, как выполнять учебное задание?<table border=0><tr>
+<td><input type="radio" name="r22" value='2'>Очень нравится</td>
+<td><input type="radio" name="r22" value='1'>Нравится</td>
+<td><input type="radio" name="r22" value='0'>Не знаю</td>
+<td><input type="radio" name="r22" value='-1'>Не нравится</td>
+<td><input type="radio" name="r22" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Узнавать о способах борьбы с опасными болезнями?<table border=0><tr>
+<td><input type="radio" name="r23" value='2'>Очень нравится</td>
+<td><input type="radio" name="r23" value='1'>Нравится</td>
+<td><input type="radio" name="r23" value='0'>Не знаю</td>
+<td><input type="radio" name="r23" value='-1'>Не нравится</td>
+<td><input type="radio" name="r23" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Шить, вышивать, готовить?<table border=0><tr>
+<td><input type="radio" name="r24" value='2'>Очень нравится</td>
+<td><input type="radio" name="r24" value='1'>Нравится</td>
+<td><input type="radio" name="r24" value='0'>Не знаю</td>
+<td><input type="radio" name="r24" value='-1'>Не нравится</td>
+<td><input type="radio" name="r24" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Выезжать с классом на экскурсии?<table border=0><tr>
+<td><input type="radio" name="r25" value='2'>Очень нравится</td>
+<td><input type="radio" name="r25" value='1'>Нравится</td>
+<td><input type="radio" name="r25" value='0'>Не знаю</td>
+<td><input type="radio" name="r25" value='-1'>Не нравится</td>
+<td><input type="radio" name="r25" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Интересоваться развитием военной техники?<table border=0><tr>
+<td><input type="radio" name="r26" value='2'>Очень нравится</td>
+<td><input type="radio" name="r26" value='1'>Нравится</td>
+<td><input type="radio" name="r26" value='0'>Не знаю</td>
+<td><input type="radio" name="r26" value='-1'>Не нравится</td>
+<td><input type="radio" name="r26" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Выполнять лабораторные работы по физике?<table border=0><tr>
+<td><input type="radio" name="r27" value='2'>Очень нравится</td>
+<td><input type="radio" name="r27" value='1'>Нравится</td>
+<td><input type="radio" name="r27" value='0'>Не знаю</td>
+<td><input type="radio" name="r27" value='-1'>Не нравится</td>
+<td><input type="radio" name="r27" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Проводить опыты по химии?<table border=0><tr>
+<td><input type="radio" name="r28" value='2'>Очень нравится</td>
+<td><input type="radio" name="r28" value='1'>Нравится</td>
+<td><input type="radio" name="r28" value='0'>Не знаю</td>
+<td><input type="radio" name="r28" value='-1'>Не нравится</td>
+<td><input type="radio" name="r28" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Узнавать о радиотехнических новинках?<table border=0><tr>
+<td><input type="radio" name="r29" value='2'>Очень нравится</td>
+<td><input type="radio" name="r29" value='1'>Нравится</td>
+<td><input type="radio" name="r29" value='0'>Не знаю</td>
+<td><input type="radio" name="r29" value='-1'>Не нравится</td>
+<td><input type="radio" name="r29" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Ремонтировать велосипеды, мотоциклы?<table border=0><tr>
+<td><input type="radio" name="r30" value='2'>Очень нравится</td>
+<td><input type="radio" name="r30" value='1'>Нравится</td>
+<td><input type="radio" name="r30" value='0'>Не знаю</td>
+<td><input type="radio" name="r30" value='-1'>Не нравится</td>
+<td><input type="radio" name="r30" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Изучать историю и географию родного края?<table border=0><tr>
+<td><input type="radio" name="r31" value='2'>Очень нравится</td>
+<td><input type="radio" name="r31" value='1'>Нравится</td>
+<td><input type="radio" name="r31" value='0'>Не знаю</td>
+<td><input type="radio" name="r31" value='-1'>Не нравится</td>
+<td><input type="radio" name="r31" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Оказывать помощь в лечении животных?<table border=0><tr>
+<td><input type="radio" name="r32" value='2'>Очень нравится</td>
+<td><input type="radio" name="r32" value='1'>Нравится</td>
+<td><input type="radio" name="r32" value='0'>Не знаю</td>
+<td><input type="radio" name="r32" value='-1'>Не нравится</td>
+<td><input type="radio" name="r32" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Писать стихи, рассказы, сочинять?<table border=0><tr>
+<td><input type="radio" name="r33" value='2'>Очень нравится</td>
+<td><input type="radio" name="r33" value='1'>Нравится</td>
+<td><input type="radio" name="r33" value='0'>Не знаю</td>
+<td><input type="radio" name="r33" value='-1'>Не нравится</td>
+<td><input type="radio" name="r33" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Посещать уроки истории?<table border=0><tr>
+<td><input type="radio" name="r34" value='2'>Очень нравится</td>
+<td><input type="radio" name="r34" value='1'>Нравится</td>
+<td><input type="radio" name="r34" value='0'>Не знаю</td>
+<td><input type="radio" name="r34" value='-1'>Не нравится</td>
+<td><input type="radio" name="r34" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Заниматься с младшими детьми: читать, рассказывать сказки, играть?<table border=0><tr>
+<td><input type="radio" name="r35" value='2'>Очень нравится</td>
+<td><input type="radio" name="r35" value='1'>Нравится</td>
+<td><input type="radio" name="r35" value='0'>Не знаю</td>
+<td><input type="radio" name="r35" value='-1'>Не нравится</td>
+<td><input type="radio" name="r35" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Поддерживать здоровый образ жизни?<table border=0><tr>
+<td><input type="radio" name="r36" value='2'>Очень нравится</td>
+<td><input type="radio" name="r36" value='1'>Нравится</td>
+<td><input type="radio" name="r36" value='0'>Не знаю</td>
+<td><input type="radio" name="r36" value='-1'>Не нравится</td>
+<td><input type="radio" name="r36" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Содержать свои вещи в порядке?<table border=0><tr>
+<td><input type="radio" name="r37" value='2'>Очень нравится</td>
+<td><input type="radio" name="r37" value='1'>Нравится</td>
+<td><input type="radio" name="r37" value='0'>Не знаю</td>
+<td><input type="radio" name="r37" value='-1'>Не нравится</td>
+<td><input type="radio" name="r37" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Участвовать в театральных постановках в школе?<table border=0><tr>
+<td><input type="radio" name="r38" value='2'>Очень нравится</td>
+<td><input type="radio" name="r38" value='1'>Нравится</td>
+<td><input type="radio" name="r38" value='0'>Не знаю</td>
+<td><input type="radio" name="r38" value='-1'>Не нравится</td>
+<td><input type="radio" name="r38" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Участвовать в военно-спортивных играх?<table border=0><tr>
+<td><input type="radio" name="r39" value='2'>Очень нравится</td>
+<td><input type="radio" name="r39" value='1'>Нравится</td>
+<td><input type="radio" name="r39" value='0'>Не знаю</td>
+<td><input type="radio" name="r39" value='-1'>Не нравится</td>
+<td><input type="radio" name="r39" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+Выполнять чертежи?<table border=0><tr>
+<td><input type="radio" name="r40" value='2'>Очень нравится</td>
+<td><input type="radio" name="r40" value='1'>Нравится</td>
+<td><input type="radio" name="r40" value='0'>Не знаю</td>
+<td><input type="radio" name="r40" value='-1'>Не нравится</td>
+<td><input type="radio" name="r40" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Решать задачи по химии?<table border=0><tr>
+<td><input type="radio" name="r41" value='2'>Очень нравится</td>
+<td><input type="radio" name="r41" value='1'>Нравится</td>
+<td><input type="radio" name="r41" value='0'>Не знаю</td>
+<td><input type="radio" name="r41" value='-1'>Не нравится</td>
+<td><input type="radio" name="r41" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Ремонтировать компьютеры?<table border=0><tr>
+<td><input type="radio" name="r42" value='2'>Очень нравится</td>
+<td><input type="radio" name="r42" value='1'>Нравится</td>
+<td><input type="radio" name="r42" value='0'>Не знаю</td>
+<td><input type="radio" name="r42" value='-1'>Не нравится</td>
+<td><input type="radio" name="r42" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Моделировать, изготавливать модели кораблей, самолётов?<table border=0><tr>
+<td><input type="radio" name="r43" value='2'>Очень нравится</td>
+<td><input type="radio" name="r43" value='1'>Нравится</td>
+<td><input type="radio" name="r43" value='0'>Не знаю</td>
+<td><input type="radio" name="r43" value='-1'>Не нравится</td>
+<td><input type="radio" name="r43" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Часто бывать на свежем воздухе в любую погоду?<table border=0><tr>
+<td><input type="radio" name="r44" value='2'>Очень нравится</td>
+<td><input type="radio" name="r44" value='1'>Нравится</td>
+<td><input type="radio" name="r44" value='0'>Не знаю</td>
+<td><input type="radio" name="r44" value='-1'>Не нравится</td>
+<td><input type="radio" name="r44" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Составлять проекты по экологии?<table border=0><tr>
+<td><input type="radio" name="r45" value='2'>Очень нравится</td>
+<td><input type="radio" name="r45" value='1'>Нравится</td>
+<td><input type="radio" name="r45" value='0'>Не знаю</td>
+<td><input type="radio" name="r45" value='-1'>Не нравится</td>
+<td><input type="radio" name="r45" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Изучать иностранный язык?<table border=0><tr>
+<td><input type="radio" name="r46" value='2'>Очень нравится</td>
+<td><input type="radio" name="r46" value='1'>Нравится</td>
+<td><input type="radio" name="r46" value='0'>Не знаю</td>
+<td><input type="radio" name="r46" value='-1'>Не нравится</td>
+<td><input type="radio" name="r46" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Участвовать в школьных НОУ по истории?<table border=0><tr>
+<td><input type="radio" name="r47" value='2'>Очень нравится</td>
+<td><input type="radio" name="r47" value='1'>Нравится</td>
+<td><input type="radio" name="r47" value='0'>Не знаю</td>
+<td><input type="radio" name="r47" value='-1'>Не нравится</td>
+<td><input type="radio" name="r47" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Быть организатором общешкольных мероприятий?<table border=0><tr>
+<td><input type="radio" name="r48" value='2'>Очень нравится</td>
+<td><input type="radio" name="r48" value='1'>Нравится</td>
+<td><input type="radio" name="r48" value='0'>Не знаю</td>
+<td><input type="radio" name="r48" value='-1'>Не нравится</td>
+<td><input type="radio" name="r48" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Не терять самообладание при виде крови, ожогов, открытых ран?<table border=0><tr>
+<td><input type="radio" name="r49" value='2'>Очень нравится</td>
+<td><input type="radio" name="r49" value='1'>Нравится</td>
+<td><input type="radio" name="r49" value='0'>Не знаю</td>
+<td><input type="radio" name="r49" value='-1'>Не нравится</td>
+<td><input type="radio" name="r49" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+ Делать разные покупки для дома?<table border=0><tr>
+<td><input type="radio" name="r50" value='2'>Очень нравится</td>
+<td><input type="radio" name="r50" value='1'>Нравится</td>
+<td><input type="radio" name="r50" value='0'>Не знаю</td>
+<td><input type="radio" name="r50" value='-1'>Не нравится</td>
+<td><input type="radio" name="r50" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+Любить всё красивое, уметь видеть прекрасное?<table border=0><tr>
+<td><input type="radio" name="r51" value='2'>Очень нравится</td>
+<td><input type="radio" name="r51" value='1'>Нравится</td>
+<td><input type="radio" name="r51" value='0'>Не знаю</td>
+<td><input type="radio" name="r51" value='-1'>Не нравится</td>
+<td><input type="radio" name="r51" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Заниматься в спортивных секциях?<table border=0><tr>
+<td><input type="radio" name="r52" value='2'>Очень нравится</td>
+<td><input type="radio" name="r52" value='1'>Нравится</td>
+<td><input type="radio" name="r52" value='0'>Не знаю</td>
+<td><input type="radio" name="r52" value='-1'>Не нравится</td>
+<td><input type="radio" name="r52" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Составлять компьютерные программы?<table border=0><tr>
+<td><input type="radio" name="r53" value='2'>Очень нравится</td>
+<td><input type="radio" name="r53" value='1'>Нравится</td>
+<td><input type="radio" name="r53" value='0'>Не знаю</td>
+<td><input type="radio" name="r53" value='-1'>Не нравится</td>
+<td><input type="radio" name="r53" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Применять знания по химии в повседневной жизни?<table border=0><tr>
+<td><input type="radio" name="r54" value='2'>Очень нравится</td>
+<td><input type="radio" name="r54" value='1'>Нравится</td>
+<td><input type="radio" name="r54" value='0'>Не знаю</td>
+<td><input type="radio" name="r54" value='-1'>Не нравится</td>
+<td><input type="radio" name="r54" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Проводить сложные расчёты, измерять?<table border=0><tr>
+<td><input type="radio" name="r55" value='2'>Очень нравится</td>
+<td><input type="radio" name="r55" value='1'>Нравится</td>
+<td><input type="radio" name="r55" value='0'>Не знаю</td>
+<td><input type="radio" name="r55" value='-1'>Не нравится</td>
+<td><input type="radio" name="r55" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Соблюдать правила безопасной работы с механизмами и аппаратурой?<table border=0><tr>
+<td><input type="radio" name="r56" value='2'>Очень нравится</td>
+<td><input type="radio" name="r56" value='1'>Нравится</td>
+<td><input type="radio" name="r56" value='0'>Не знаю</td>
+<td><input type="radio" name="r56" value='-1'>Не нравится</td>
+<td><input type="radio" name="r56" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+ Много разъезжать, встречаться с новыми людьми, видеть мир собственными глазами?<table border=0><tr>
+<td><input type="radio" name="r57" value='2'>Очень нравится</td>
+<td><input type="radio" name="r57" value='1'>Нравится</td>
+<td><input type="radio" name="r57" value='0'>Не знаю</td>
+<td><input type="radio" name="r57" value='-1'>Не нравится</td>
+<td><input type="radio" name="r57" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Заниматься воспитанием и дрессировкой животных?<table border=0><tr>
+<td><input type="radio" name="r58" value='2'>Очень нравится</td>
+<td><input type="radio" name="r58" value='1'>Нравится</td>
+<td><input type="radio" name="r58" value='0'>Не знаю</td>
+<td><input type="radio" name="r58" value='-1'>Не нравится</td>
+<td><input type="radio" name="r58" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Работать со словарём и литературными источниками?<table border=0><tr>
+<td><input type="radio" name="r59" value='2'>Очень нравится</td>
+<td><input type="radio" name="r59" value='1'>Нравится</td>
+<td><input type="radio" name="r59" value='0'>Не знаю</td>
+<td><input type="radio" name="r59" value='-1'>Не нравится</td>
+<td><input type="radio" name="r59" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+ Хорошо знать и соблюдать существующие законы?<table border=0><tr>
+<td><input type="radio" name="r60" value='2'>Очень нравится</td>
+<td><input type="radio" name="r60" value='1'>Нравится</td>
+<td><input type="radio" name="r60" value='0'>Не знаю</td>
+<td><input type="radio" name="r60" value='-1'>Не нравится</td>
+<td><input type="radio" name="r60" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Самому больше знать, чтобы было чему учить других?<table border=0><tr>
+<td><input type="radio" name="r61" value='2'>Очень нравится</td>
+<td><input type="radio" name="r61" value='1'>Нравится</td>
+<td><input type="radio" name="r61" value='0'>Не знаю</td>
+<td><input type="radio" name="r61" value='-1'>Не нравится</td>
+<td><input type="radio" name="r61" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Всегда вовремя питаться и отдыхать, соблюдать режим дня?<table border=0><tr>
+<td><input type="radio" name="r62" value='2'>Очень нравится</td>
+<td><input type="radio" name="r62" value='1'>Нравится</td>
+<td><input type="radio" name="r62" value='0'>Не знаю</td>
+<td><input type="radio" name="r62" value='-1'>Не нравится</td>
+<td><input type="radio" name="r62" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Уметь выполнять несколько дел одновременно, быстро переключаться на разные виды работ?<table border=0><tr>
+<td><input type="radio" name="r63" value='2'>Очень нравится</td>
+<td><input type="radio" name="r63" value='1'>Нравится</td>
+<td><input type="radio" name="r63" value='0'>Не знаю</td>
+<td><input type="radio" name="r63" value='-1'>Не нравится</td>
+<td><input type="radio" name="r63" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+В совершенстве владеть своим голосом, настроением, тренировать их (петь, танцевать)?<table border=0><tr>
+<td><input type="radio" name="r64" value='2'>Очень нравится</td>
+<td><input type="radio" name="r64" value='1'>Нравится</td>
+<td><input type="radio" name="r64" value='0'>Не знаю</td>
+<td><input type="radio" name="r64" value='-1'>Не нравится</td>
+<td><input type="radio" name="r64" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Быть организатором в походах и играх?<table border=0><tr>
+<td><input type="radio" name="r65" value='2'>Очень нравится</td>
+<td><input type="radio" name="r65" value='1'>Нравится</td>
+<td><input type="radio" name="r65" value='0'>Не знаю</td>
+<td><input type="radio" name="r65" value='-1'>Не нравится</td>
+<td><input type="radio" name="r65" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+В своих размышлениях основываться только на строгой логике и математике?<table border=0><tr>
+<td><input type="radio" name="r66" value='2'>Очень нравится</td>
+<td><input type="radio" name="r66" value='1'>Нравится</td>
+<td><input type="radio" name="r66" value='0'>Не знаю</td>
+<td><input type="radio" name="r66" value='-1'>Не нравится</td>
+<td><input type="radio" name="r66" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Готовить растворы, взвешивать реактивы?<table border=0><tr>
+<td><input type="radio" name="r67" value='2'>Очень нравится</td>
+<td><input type="radio" name="r67" value='1'>Нравится</td>
+<td><input type="radio" name="r67" value='0'>Не знаю</td>
+<td><input type="radio" name="r67" value='-1'>Не нравится</td>
+<td><input type="radio" name="r67" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Разбираться в радиосхемах?<table border=0><tr>
+<td><input type="radio" name="r68" value='2'>Очень нравится</td>
+<td><input type="radio" name="r68" value='1'>Нравится</td>
+<td><input type="radio" name="r68" value='0'>Не знаю</td>
+<td><input type="radio" name="r68" value='-1'>Не нравится</td>
+<td><input type="radio" name="r68" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Настраивать сложную технику и приборы?<table border=0><tr>
+<td><input type="radio" name="r69" value='2'>Очень нравится</td>
+<td><input type="radio" name="r69" value='1'>Нравится</td>
+<td><input type="radio" name="r69" value='0'>Не знаю</td>
+<td><input type="radio" name="r69" value='-1'>Не нравится</td>
+<td><input type="radio" name="r69" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Изучать географию нашей планеты?<table border=0><tr>
+<td><input type="radio" name="r70" value='2'>Очень нравится</td>
+<td><input type="radio" name="r70" value='1'>Нравится</td>
+<td><input type="radio" name="r70" value='0'>Не знаю</td>
+<td><input type="radio" name="r70" value='-1'>Не нравится</td>
+<td><input type="radio" name="r70" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Проводить время в лесу?<table border=0><tr>
+<td><input type="radio" name="r71" value='2'>Очень нравится</td>
+<td><input type="radio" name="r71" value='1'>Нравится</td>
+<td><input type="radio" name="r71" value='0'>Не знаю</td>
+<td><input type="radio" name="r71" value='-1'>Не нравится</td>
+<td><input type="radio" name="r71" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Изучать происхождение слов и отдельных словосочетаний?<table border=0><tr>
+<td><input type="radio" name="r72" value='2'>Очень нравится</td>
+<td><input type="radio" name="r72" value='1'>Нравится</td>
+<td><input type="radio" name="r72" value='0'>Не знаю</td>
+<td><input type="radio" name="r72" value='-1'>Не нравится</td>
+<td><input type="radio" name="r72" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Интересоваться прошлым нашей страны?<table border=0><tr>
+<td><input type="radio" name="r73" value='2'>Очень нравится</td>
+<td><input type="radio" name="r73" value='1'>Нравится</td>
+<td><input type="radio" name="r73" value='0'>Не знаю</td>
+<td><input type="radio" name="r73" value='-1'>Не нравится</td>
+<td><input type="radio" name="r73" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Организовывать людей, быть лидером?<table border=0><tr>
+<td><input type="radio" name="r74" value='2'>Очень нравится</td>
+<td><input type="radio" name="r74" value='1'>Нравится</td>
+<td><input type="radio" name="r74" value='0'>Не знаю</td>
+<td><input type="radio" name="r74" value='-1'>Не нравится</td>
+<td><input type="radio" name="r74" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Убеждать людей в необходимости беречь своё здоровье (не курить, не пьянствовать, избегать излишеств)?<table border=0><tr>
+<td><input type="radio" name="r75" value='2'>Очень нравится</td>
+<td><input type="radio" name="r75" value='1'>Нравится</td>
+<td><input type="radio" name="r75" value='0'>Не знаю</td>
+<td><input type="radio" name="r75" value='-1'>Не нравится</td>
+<td><input type="radio" name="r75" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Знакомиться, общаться с разными людьми?<table border=0><tr>
+<td><input type="radio" name="r76" value='2'>Очень нравится</td>
+<td><input type="radio" name="r76" value='1'>Нравится</td>
+<td><input type="radio" name="r76" value='0'>Не знаю</td>
+<td><input type="radio" name="r76" value='-1'>Не нравится</td>
+<td><input type="radio" name="r76" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Играть на музыкальных инструментах, рисовать?<table border=0><tr>
+<td><input type="radio" name="r77" value='2'>Очень нравится</td>
+<td><input type="radio" name="r77" value='1'>Нравится</td>
+<td><input type="radio" name="r77" value='0'>Не знаю</td>
+<td><input type="radio" name="r77" value='-1'>Не нравится</td>
+<td><input type="radio" name="r77" value='-2'>Очень не нравится</td></tr></table></p>
+<p><li>
+
+Соблюдать дисциплину и порядок?<table border=0><tr>
+<td><input type="radio" name="r78" value='2'>Очень нравится</td>
+<td><input type="radio" name="r78" value='1'>Нравится</td>
+<td><input type="radio" name="r78" value='0'>Не знаю</td>
+<td><input type="radio" name="r78" value='-1'>Не нравится</td>
+<td><input type="radio" name="r78" value='-2'>Очень не нравится</td></tr></table></p>
+
+</ol>
+
+<p>
+<center>
+<input type="reset" >&nbsp&nbsp&nbsp<button onClick="mass()" >Подведем итоги</button>
+</center>
+</p>
+
+</form>
+</body>
+</html>
+
+
+
+

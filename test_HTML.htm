@@ -1,0 +1,285 @@
+<HTML>
+<HEAD>
+<TITLE>Тест по HTML</TITLE>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<link href=style001.css rel=stylesheet type=text/css>
+
+<style type="text/css">
+h1  {text-align:center; color:#A9A9A9; background-color: #FFFFFF; font-family:Verdana; font-size:13pt}
+p  {font-size:10pt; font-family:Verdana; color:darkslategray; background:lavender;}
+h3 {text-align:center; font-family:Verdana; color:darkslategray}
+TR {font-size:11pt; font-family:Courier New; color:dimgray}
+form {font-size:11pt; font-family:Courier New; color:dimgray; margin-left:20px;}
+</style>
+
+ <script>
+   var r=new Array(0,3,0,0,2,1,0,0,3,1,0,1,0,1,0,3,2,2,3,0,1,2,2,2,3,0,2,1,0,1,2,1,1,1,1,2,3,1,0,3);
+   var b=0;
+
+    function z(){
+     b=0;
+     for (i=1; i<=40; i++) 
+       if (document.test.elements["q"+i][r[i-1]].checked) {b++}
+     
+     document.test.display.value=b; 
+       if (b<=10)
+        alert ("Вы набрали "+b+" очка(ов).\n Внимание!\n Складывается такое ощущение, что вы даже не заглянули в теорию проекта!\nОценка 2.");
+       if (b>=11 && b<=29)  
+        alert ("Вы набрали "+b+" очка(ов).\n Терпение, упорство, желание знать, ну и, конечно, прочтение теории проекта и вы сможете добиться максимального результата.\nОценка 3.");
+       if (b>29 && b<=38)  
+        alert ("Вы набрали "+b+" очка(ов).\n Больше внимания и у вас всё получится.\nОценка 4.");
+       if (b>38)  
+        alert ("Вы набрали "+b+" очка(ов).\n Великолепно! Рада за Вас!\nОценка 5.");
+   
+}
+</script>
+
+</HEAD>
+<BODY  background="2.jpg">
+<h1>О с н о в ы &nbsp H T M L</h1>
+<form name="test">
+<ol>
+<li><p>Какой тег обозначает курсив?</p>
+<input name=q1 type="radio">I<br>
+<input name=q1 type="radio">LI<br>
+<input name=q1 type="radio">UL<br>
+<input name=q1 type="radio">B<br><br>
+
+<li><p>Какой тег отделяет абзацы друг от друга?</p>
+<input name=q2 type="radio">PRL<br>
+<input name=q2 type="radio">HR<br>
+<input name=q2 type="radio">DL<br>
+<input name=q2 type="radio">P<br><br>
+
+<li><p>Какой тег обозначает начертание горизонтальной линии?</p>
+<input name=q3 type="radio">HR<br>
+<input name=q3 type="radio">TABLE<br>
+<input name=q3 type="radio">OL<br>
+<input name=q3 type="radio">BR<br><br>
+
+<li><p>С помощью какого тега можно отобразить текст подчёркнутым?</p>
+<input name=q4 type="radio">U<br>
+<input name=q4 type="radio">PRL<br>
+<input name=q4 type="radio">DL<br>
+<input name=q4 type="radio">UL<br><br>
+
+<li><p>Выберите правильный ответ для размещения заголовка в центре строки</p>
+<input name=q5 type="radio">&ltcenter>&lth1>Заголовок<br>
+<input name=q5 type="radio">&ltcenter>&lth1>Заголовок&lt/center>&lt/h1><br>
+<input name=q5 type="radio">&ltcenter>&lth1>Заголовок&lt/h1>&lt/center><br>
+<input name=q5 type="radio">&lth1>&ltcenter>Заголовок&lt/h1>&ltcenter><br><br>
+
+
+<li><p>Каким тегом обозначается элемент списка?</p>
+<input name=q6 type="radio">HEAD<br>
+<input name=q6 type="radio">LI<br>
+<input name=q6 type="radio">DD<br>
+<input name=q6 type="radio">OL<br><br>
+
+<li><p>С помощью какого тега создаётся маркированный список?</p>
+<input name=q7 type="radio">UL<br>
+<input name=q7 type="radio">HEAD<br>
+<input name=q7 type="radio">BR<br>
+<input name=q7 type="radio">EM<br><br>
+
+<li><p>С помощью какого параметра задаётся всплывающая подсказка?</p>
+<input name=q8 type="radio">ALT<br>
+<input name=q8 type="radio">ALIGN<br>
+<input name=q8 type="radio">BORDER<br>
+<input name=q8 type="radio">HEIGHT<br><br>
+
+<li><p>Какой формат файла не является графическим?</p>
+<input name=q9 type="radio">JPG<br>
+<input name=q9 type="radio">GIF<br>
+<input name=q9 type="radio">BMP<br>
+<input name=q9 type="radio">GFI<br><br>
+
+<li><p>Что получится в результате выполнения: &ltframeset cols="50%,*">?</p>
+<input name=q10 type="radio">Окно броузера разделится на два одинаковых фрейма по горизонтали<br>
+<input name=q10 type="radio">Окно броузера разделится на два одинаковых фрейма по вертикали<br>
+<input name=q10 type="radio">Окно броузера разделится на 4 фрейма по вертикали<br>
+<input name=q10 type="radio">Тег содержит ошибку<br><br>
+
+<li><p>Каким тегом выполняется вставка графического изображения?</p>
+<input name=q11 type="radio">IMG<br>
+<input name=q11 type="radio">SRC<br>
+<input name=q11 type="radio">INFINITE <br>
+<input name=q11 type="radio">A HREF<br><br>
+
+<li><p>Какой параметр выполняет создание фона объекта из графического файла?</p>
+<input name=q12 type="radio">SRC<br>
+<input name=q12 type="radio">BACKGROUND<br>
+<input name=q12 type="radio">BGCOLOR<br>
+<input name=q12 type="radio">STYLE<br><br>
+
+<li><p>Какой параметр задаёт выравнивание объекта на Web-странице?</p>
+<input name=q13 type="radio">ALIGN<br>
+<input name=q13 type="radio">ALT<br>
+<input name=q13 type="radio">URL<br>
+<input name=q13 type="radio">TEXT<br><br>
+
+<li><p>Какой тег задаёт бегущую строку?</p>
+<input name=q14 type="radio">LOOP<br>
+<input name=q14 type="radio">MARQUEE<br>
+<input name=q14 type="radio">BR<br>
+<input name=q14 type="radio">TIME<br><br>
+
+<li><p>Какой параметр устанавливает фон объекта?</p>
+<input name=q15 type="radio">BGCOLOR<br>
+<input name=q15 type="radio">ALIGN<br>
+<input name=q15 type="radio">TEXT<br>
+<input name=q15 type="radio">CLEAR<br><br>
+
+<li><p>Какой параметр задаёт ширину объекта?</p>
+<input name=q16 type="radio">BORDER<br>
+<input name=q16 type="radio">HEIGHT<br>
+<input name=q16 type="radio">HSPACE<br>
+<input name=q16 type="radio">WIDTH<br><br>
+
+<li><p>Какой тег создаёт строку таблицы?</p>
+<input name=q17 type="radio">TH<br>
+<input name=q17 type="radio">TD<br>
+<input name=q17 type="radio">TR<br>
+<input name=q17 type="radio">TABLE<br><br>
+
+<li><p>Какой элемент создаёт однострочное поле ввода в форме?</p>
+<input name=q18 type="radio">CHECKBOX<br>
+<input name=q18 type="radio">VALUE<br>
+<input name=q18 type="radio">TEXT<br>
+<input name=q18 type="radio">ALT<br><br>
+
+<li><p>Какой элемент создаёт переключатель в форме?</p>
+<input name=q19 type="radio">FORM<br>
+<input name=q19 type="radio">INPUT<br>
+<input name=q19 type="radio">BUTTON<br>
+<input name=q19 type="radio">RADIO<br><br>
+
+<li><p>С помощью какого контейнера можно создать раскрывающийся список в форме?</p>
+<input name=q20 type="radio">SELECT<br>
+<input name=q20 type="radio">OPTION<br>
+<input name=q20 type="radio">TEXTAREA<br>
+<input name=q20 type="radio">INPUT<br><br>
+
+<li><p>Какой элемент создаёт кнопку отмены ввода данных в форме?</p>
+<input name=q21 type="radio">SRC<br>
+<input name=q21 type="radio">RESET<br>
+<input name=q21 type="radio">WRONG<br>
+<input name=q21 type="radio">ESCAPE<br><br>
+
+<li><p>Какой элемент создаёт кнопку для передачи данных в форме?</p>
+<input name=q22 type="radio">RIGHT<br>
+<input name=q22 type="radio">YES<br>
+<input name=q22 type="radio">SUBMIT<br>
+<input name=q22 type="radio">VALUE<br><br>
+
+<li><p>Какой элемент создаёт многострочное текстовое поле в форме?</p>
+<input name=q23 type="radio">NAME<br>
+<input name=q23 type="radio">TEXT<br>
+<input name=q23 type="radio">TEXTAREA<br>
+<input name=q23 type="radio">PASSWORD<br><br>
+
+<li><p>Какой элемент создаёт поле для пароля в форме?</p>
+<input name=q24 type="radio">FORM<br>
+<input name=q24 type="radio">SELECT<br>
+<input name=q24 type="radio">PASSWORD<br>
+<input name=q24 type="radio">OPTION<br><br>
+
+<li><p>Какой элемент является объектом Web-страницы?</p>
+<input name=q25 type="radio">Заголовок<br>
+<input name=q25 type="radio">Абзац<br>
+<input name=q25 type="radio">Таблица<br>
+<input name=q25 type="radio">Все перечисленные выше элементы<br><br>
+
+<li><p>Определите ссылку на внешний файл?</p>
+<input name=q26 type="radio">&lta href='f.htm'>Переход&lt/a><br>
+<input name=q26 type="radio">&lta href='f.htm#R'>Переход&lt/a><br>
+<input name=q26 type="radio">&lta href='#R'>Переход&lt/a><br><br>
+
+
+<li><p>Определите внутристраничную ссылку?</p>
+<input name=q27 type="radio">&lta href='f.htm'>Переход&lt/a><br>
+<input name=q27 type="radio">&lta href='f.htm#R'>Переход&lt/a><br>
+<input name=q27 type="radio">&lta href='#R'>Переход&lt/a><br><br>
+
+<li><p>Определите ссылку на внешний файл по заданной метке?</p>
+<input name=q28 type="radio">&lta href='f.htm'>Переход&lt/a><br>
+<input name=q28 type="radio">&lta href='f.htm#R'>Переход&lt/a><br>
+<input name=q28 type="radio">&lta href='#R'>Переход&lt/a><br><br>
+
+<li><p>Можно ли графическое изображение разместить в ячейке таблицы?</p>
+<input name=q29 type="radio">ДА<br>
+<input name=q29 type="radio">НЕТ<br><br>
+
+<li><p>Имеет ли конечный тег элемент INPUT?</p>
+<input name=q30 type="radio">ДА<br>
+<input name=q30 type="radio">НЕТ<br><br>
+
+<li><p>Выберите правильную последовательность свойств CSS для форматирования абзаца {цвет; вид шрифта; выравнивание; размер}?</p>
+<input name=q31 type="radio">{color:red; text-align:justify; font-family:Verdana; font-size:12pt}<br>
+<input name=q31 type="radio">{color:red; font-family:Verdana; font-size:12pt; text-align:justify}<br>
+<input name=q31 type="radio">{color:red; font-family:Verdana; text-align:justify; font-size:12pt}<br>
+<input name=q31 type="radio">{font-family:Verdana; font-size:12pt; color:red; text-align:justify}<br><br>
+
+<li><p>Какой элемент используется для создания нумерованного списка римскими числами?</p>
+<input name=q32 type="radio">&ltol type=1><br>
+<input name=q32 type="radio">&ltol type=I><br>
+<input name=q32 type="radio">&ltol type=A><br>
+<input name=q32 type="radio">&ltol type=a><br><br>
+
+<li><p>Какой контейнер используют для создания таблицы?</p>
+<input name=q33 type="radio">FRAME<br>
+<input name=q33 type="radio">TABLE<br>
+<input name=q33 type="radio">BORDER<br>
+<input name=q33 type="radio">HTML<br><br>
+
+<li><p>Какой параметр задаёт решётку таблицы?</p>
+<input name=q34 type="radio">FRAME<br>
+<input name=q34 type="radio">BORDER<br>
+<input name=q34 type="radio">ALIGN<br>
+<input name=q34 type="radio">LOOP<br><br>
+
+<li><p>Какой параметр используют для слияния столбцов в ячейке таблицы?</p>
+<input name=q35 type="radio">ALIGN<br>
+<input name=q35 type="radio">COLSPAN<br>
+<input name=q35 type="radio">ROWSPAN<br>
+<input name=q35 type="radio">WIDTH<br><br>
+
+<li><p>Какой параметр используют для слияния строк в ячейке таблицы?</p>
+<input name=q36 type="radio">ALIGN<br>
+<input name=q36 type="radio">COLSPAN<br>
+<input name=q36 type="radio">ROWSPAN<br>
+<input name=q36 type="radio">WIDTH<br><br>
+
+<li><p>Какой параметр устанавливает ширину таблицы?</p>
+<input name=q37 type="radio">ALIGN<br>
+<input name=q37 type="radio">COLSPAN<br>
+<input name=q37 type="radio">ROWSPAN<br>
+<input name=q37 type="radio">WIDTH<br><br>
+
+<li><p>Какой тег используют для создания заголовка ("шапки") в ячейке таблицы?</p>
+<input name=q38 type="radio">TD<br>
+<input name=q38 type="radio">TH<br>
+<input name=q38 type="radio">TABLE<br>
+<input name=q38 type="radio">TR<br><br>
+
+<li><p>Какой тег используют для создания обычной ячейки таблицы?</p>
+<input name=q39 type="radio">TD<br>
+<input name=q39 type="radio">TH<br>
+<input name=q39 type="radio">TABLE<br>
+<input name=q39 type="radio">TR<br><br>
+
+<li><p>Опрелите правильную последовательность тегов?</p>
+<input name=q40 type="radio">&ltHTML>&ltHEAD>&ltBODY>&lt/BODY>&lt/HEAD>&lt/HTML><br>
+<input name=q40 type="radio">&ltHTML>&ltHEAD>&ltBODY>&lt/HEAD>&lt/BODY>&lt/HTML><br>
+<input name=q40 type="radio">&ltHTML>&ltHEAD>&ltBODY>&lt/HEAD>&lt/HTML>&lt/BODY><br>
+<input name=q40 type="radio">&ltHTML>&ltHEAD>&lt/HEAD>&ltBODY>&lt/BODY>&lt/HTML><br><br>
+
+
+
+</ol>
+<p> &nbsp &nbsp &nbsp &nbspВы набрали: <textarea cols="5" name="display" rows="1"></textarea> очков &nbsp &nbsp &nbsp
+<input type=button value="Подведем итоги" onClick="z()">  &nbsp &nbsp &nbsp
+<input type=reset value="Очистить"></p>
+</form>
+</BODY>
+</HTML>
