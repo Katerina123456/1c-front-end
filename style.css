@@ -1,13 +1,6 @@
-html, body {
-    height: 100%;
-    margin: 0;
- }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header--blue {
+    color:blue;
 }
-canvas {
-    border: 1px solid black;
+.heafer--underlines {
+    text-decoration: inderline;
 }
