@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <label>  <input type="checkbox" v-model="headerStyle.blue">Синий
+        <label>  
+            <input type="checkbox" v-model="headerStyle.blue">Синий
         </label>
         <label>
                 <input type="checkbox" v-model="headerStyle.underlined">Подчеркнутый
         </label>
-     <h1 v-blind:class="{ `header--blue`: headerStyle.blue,
-        `header--underlined`: headerStyle.underlined }">Заголовок</h1>
+     <h1 v-bind:class="{ 'header--blue': headerStyle.blue,
+        'header--underlined': headerStyle.underlined }"> 
+        Заголовок</h1>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
     <script src="script8.js"></script>
 </body>
+</html>

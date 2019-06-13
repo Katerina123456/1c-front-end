@@ -3,7 +3,7 @@ var vm = new Vue({
     data: {
         headerStyle: {
             blue: false,
-            underlinde: true
+            underlinded: true
         }
     }
 });
