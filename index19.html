@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pictures</title>
+    
+    <script>
+        var a=new Array();
+        for(i=0;i<=3;i++)
+        {
+            a[i]=new Image();
+            a[i].src="img0"+(i+1)+".gif";
+        }
+        var i=0
+        function Z1(){
+            i++;
+            if(i==4)i=0;
+            
+            document.all.myimg.src=a[i].src
+myimg.style.visibility="";
+t=setTimeout("Z1()",4500);
+  }
+  function Start(){
+      t=setTimeout("Z1()",4500);
+  }
+
+    </script>
+</head>
+<body onLoad="Start()">
+    <IMG id="myimg" STYLE="filter:revealTrans(Duration=3,Transition=12);"SRC="img01.gif"><br>
+        <h1>Замена одного графического объекта на другой</h1>
+</body>
+</html>
